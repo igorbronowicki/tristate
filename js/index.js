@@ -4,6 +4,8 @@ $(function () {
         username: ""
     }
 
+    var Family = ["Саша", "Юля", "Вася"]; // Моя семья
+
     var Controller = Backbone.Router.extend({
         routes: {
             "": "start", // Пустой hash-тэг
@@ -46,7 +48,7 @@ $(function () {
 
         check: function () {
             AppState.username = this.el.find("input:text").val(); // Сохранение имени пользователя
-            if (AppState.username == "test") // Проверка имени пользователя
+            if (_.detect(Family, function (elem) { return elem == AppState.username })) // Проверка имени пользователя
                 controller.navigate("!/success", true); // переход на страницу success
             else
                 controller.navigate("!/error", true); // переход на страницу error
