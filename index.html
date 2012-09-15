@@ -10,24 +10,33 @@
     <script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
-    <div id="start" class="block">
-        <div class="userplace">
-            <label for="username">Имя пользователя: </label>
-            <input type="text" id="username" />
-        </div>
-        <div class="buttonplace">
-            <input type="button" value="Проверить" />
-        </div>
-    </div>
+    <div id="block" class="block"></div>
 
-    <div id="error" class="block">
-        Ошибка такой пользователь не найден.
+    <script type="text/template" id="start">
+        <div class="start">
+            <div class="userplace">
+                <label for="username">Имя пользователя: </label>
+                <input type="text" id="username" />
+            </div>
+            <div class="buttonplace">
+                <input type="button" value="Проверить" />
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="error">
+    <div class="error">
+        Ошибка. Пользователь <%= username %> не найден.
         <a href="#!/">Go back</a>
     </div>
+    </script>
 
-    <div id="success" class="block">
-        Пользователь найден.
+    <script type="text/template" id="success">
+    <div class="success">
+        Пользователь <%= username %> найден.
         <a href="#!/">Go back</a>
     </div>
+    </script>
+
 </body>
 </html>

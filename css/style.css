@@ -21,27 +21,23 @@ body {
     left:50%;
     margin-left:-150px;
 }
-#start {
+.start {
     text-align: center;
 }
-#start .userplace input {
+.start .userplace input {
     width: 200px;
 }
-#error {
+.error {
     color: #9F0006;
     font-size: 1.5em;
     text-align: center;
 }
-#success {
+.success {
     color: #0045BF;
     font-size: 1.5em;
     text-align: center;
 }
-#error a, #success a {
+.error a, .success a {
     display: block;
     font-size: 0.5em;
-}
-
-#error, #success {
-    display: none;
 }
