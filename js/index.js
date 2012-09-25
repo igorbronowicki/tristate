@@ -65,9 +65,9 @@ $(function () {
         el: $("#block"), // DOM элемент widget'а
 
         templates: { // Шаблоны на разное состояние
-            "start": _.template($('#start').html()),
-            "success": _.template($('#success').html()),
-            "error": _.template($('#error').html())
+            "start": $('#start').html(),
+            "success": $('#success').html(),
+            "error": $('#error').html()
         },
 
         initialize: function () { // Подписка на событие модели
@@ -89,12 +89,12 @@ $(function () {
 
         render: function () {
             var state = this.model.get("state");
-            $(this.el).html(this.templates[state](this.model.toJSON()));
+            $(this.el).html(Mustache.render(this.templates[state], this.model.toJSON()));
             return this;
         }
     });
 
-    var block = new Block({ model: appState });
+    window.block = new Block({ model: appState });
 
     appState.trigger("change");
 

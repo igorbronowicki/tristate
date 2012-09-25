@@ -7,6 +7,7 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/underscore.js"></script>
     <script type="text/javascript" src="js/backbone.js"></script>
+    <script type="text/javascript" src="js/mustache.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
@@ -26,14 +27,14 @@
 
     <script type="text/template" id="error">
     <div class="error">
-        Ошибка. Пользователь <%= username %> не найден.
+        Ошибка. Пользователь {{username}} не найден.
         <a href="#!/">Go back</a>
     </div>
     </script>
 
     <script type="text/template" id="success">
     <div class="success">
-        Пользователь <%= username %> найден.
+        Пользователь {{username}} найден.
         <a href="#!/">Go back</a>
     </div>
     </script>
